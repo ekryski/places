@@ -1,8 +1,7 @@
-# Uber Web Interview
+## Backend
+This app uses [Flask](http://flask.pocoo.org/) as a REST API controller for managing favorite locations in a SQLite3 database. Protocol is JSON in/out.
 
-Use [Flask](http://flask.pocoo.org/) to build a REST API controller for managing favorite locations in a SQLite3 database. Protocol is JSON in/out. The `index` function has already been written. Add API calls to `api.py` to `show`, `create`, `update` and `delete` favorite locations.
-
-Here's the schema:
+The DB schema is:
 
     CREATE TABLE "locations" (
       "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
@@ -12,7 +11,8 @@ Here's the schema:
       "nickname" VARCHAR NOT NULL
     )
 
-Use [Backbone.js](http://documentcloud.github.com/backbone/) to build the frontend. Users should be able to see a list of their favorite locations, view individual locations, add new ones, and edit and delete existing. When viewing a favorite location, show it on a Google Map. The `index.html` file already has all dependencies. The Backbone app should be built in `app.js`.
+## Front End
+It uses [Backbone.js](http://documentcloud.github.com/backbone/) with AMD module wrappers and [RequireJS](http://requirejs.org/). Users should be able to see a list of their favorite locations, view individual locations, add new ones, and edit and delete existing. When viewing a favorite location, it should appear on a Google Map.
 
 ## Setup
 
@@ -21,5 +21,9 @@ Use [Backbone.js](http://documentcloud.github.com/backbone/) to build the fronte
 ## Running the Flask Server
 
 * From inside the `project` directory, run `python api.py`
-* http://127.0.0.1:5000/
+* Open up `http://127.0.0.1:5000/` in your browser.
+
+## Running Tests
+
+With the flask server already running navigate to the `project` directory and run `python api_test.py`
 
